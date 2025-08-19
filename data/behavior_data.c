@@ -6074,4 +6074,14 @@ const BehaviorScript bhvIntroScene[] = {
     END_LOOP(),
 };
 
+extern void star_crystal(void);
+const BehaviorScript bhvCrystalStar[] = {
+    BEGIN(OBJ_LIST_SURFACE),
+    OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
+    LOAD_COLLISION_DATA(crystar_collision),
+    BEGIN_LOOP(),
+        CALL_NATIVE(star_crystal),
+        CALL_NATIVE(load_object_collision_model),
+    END_LOOP(),
+};
 

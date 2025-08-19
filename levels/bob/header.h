@@ -1,6 +1,7 @@
 #ifndef BOB_HEADER_H
 #define BOB_HEADER_H
 
+#include "actors/group0.h"
 #include "types.h"
 
 // geo

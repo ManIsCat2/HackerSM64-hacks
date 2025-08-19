@@ -30,3 +30,6 @@
 #include "src/s2d_engine/s2d_config.h"
 #include FONT_C_FILE
 #endif
+
+#include "crystar/model.inc.c"
+#include "crystar/collision.inc.c"
