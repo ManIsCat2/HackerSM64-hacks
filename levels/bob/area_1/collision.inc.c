@@ -170,7 +170,7 @@ const Collision bob_area_1_collision[] = {
 	COL_VERTEX(-383, -1162, -718),
 	COL_VERTEX(-231, -1179, -718),
 	COL_VERTEX(69, -1179, -718),
-	COL_TRI_INIT(SURFACE_DEFAULT, 315),
+	COL_TRI_INIT(SURFACE_DEFAULT, 317),
 	COL_TRI(0, 1, 2),
 	COL_TRI(0, 2, 3),
 	COL_TRI(3, 2, 4),
@@ -486,6 +486,8 @@ const Collision bob_area_1_collision[] = {
 	COL_TRI(167, 166, 142),
 	COL_TRI(159, 162, 161),
 	COL_TRI(55, 54, 161),
+	COL_TRI(106, 118, 103),
+	COL_TRI(72, 56, 55),
 	COL_TRI_STOP(),
 	COL_END()
 };

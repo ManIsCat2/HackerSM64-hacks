@@ -10,7 +10,7 @@ extern Vtx bob_dl_Cylinder_mesh_layer_1_vtx_cull[8];
 extern Vtx bob_dl_Cylinder_mesh_layer_1_vtx_0[52];
 extern Gfx bob_dl_Cylinder_mesh_layer_1_tri_0[];
 extern Vtx bob_dl_Plane_mesh_layer_1_vtx_cull[8];
-extern Vtx bob_dl_Plane_mesh_layer_1_vtx_0[59];
+extern Vtx bob_dl_Plane_mesh_layer_1_vtx_0[60];
 extern Gfx bob_dl_Plane_mesh_layer_1_tri_0[];
 extern Vtx bob_dl_Plane_mesh_layer_1_vtx_1[266];
 extern Gfx bob_dl_Plane_mesh_layer_1_tri_1[];
