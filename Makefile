@@ -5,7 +5,7 @@ include util.mk
 # Default target
 default: all
 
-TARGET_STRING := sm64
+TARGET_STRING := mystical_realms
 
 # Preprocessor definitions
 DEFINES :=
@@ -92,7 +92,7 @@ FIXLIGHTS ?= 1
 
 DEBUG_MAP_STACKTRACE_FLAG := -D DEBUG_MAP_STACKTRACE
 
-TARGET := sm64
+TARGET := mystical_realms
 
 
 # GRUCODE - selects which RSP microcode to use.
@@ -101,7 +101,7 @@ TARGET := sm64
 #   l3dex2  - F3DEX2 version that only renders in wireframe
 #   f3dzex  - newer, experimental microcode used in Animal Crossing
 #   super3d - extremely experimental version of Fast3D lacking many features for speed
-GRUCODE ?= f3dzex
+GRUCODE ?= f3dex2
 $(eval $(call validate-option,GRUCODE,f3dex f3dex2 f3dex2pl f3dzex super3d l3dex2))
 
 ifeq ($(GRUCODE),f3dex) # Fast3DEX
