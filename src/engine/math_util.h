@@ -646,7 +646,6 @@ void mtxf_mul_vec3s(Mat4 mtx, Vec3s b);
 extern void mtxf_to_mtx_fast(s16 *dest, float *src);
 ALWAYS_INLINE void mtxf_to_mtx(void *dest, void *src) {
     mtxf_to_mtx_fast((s16*)dest, (float*)src);
-    // guMtxF2L(src, dest);
 }
 
 void mtxf_rotate_xy(Mtx *mtx, s16 angle);

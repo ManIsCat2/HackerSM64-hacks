@@ -61,6 +61,12 @@
 #define OPTIMIZE_OFAST 
 #endif
 
+#ifdef __GNUC__
+#define OPTIMIZE_O3 __attribute__((optimize("O3")))
+#else
+#define OPTIMIZE_O3
+#endif
+
 // Ignore 4-byte alignment in structs.
 #ifdef __GNUC__
 #define PACKED __attribute__((packed))
