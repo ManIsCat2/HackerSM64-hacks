@@ -48,10 +48,16 @@ const LevelScript level_bob_entry[] = {
 		WARP_NODE(0xF1, LEVEL_CASTLE, 0x01, 0x64, WARP_NO_CHECKPOINT),
 		MARIO_POS(0x01, 0, 0, 80, 0),
 		OBJECT(MODEL_NONE, 0, 80, 0, 0, 0, 0, (0x0A << 16), bhvSpinAirborneWarp),
+		OBJECT(MODEL_PURPLE_SWITCH, -4341, -243, 735, 0, -26, 0, 0x00000000, bhvFloorSwitchHiddenObjects),
+		OBJECT(0, -5021, -243, 285, 0, -26, 0, 0x00000000, bhvHiddenObject),
+		OBJECT(0, -5383, -243, 123, 0, -26, 0, 0x00000000, bhvHiddenObject),
+		OBJECT(0, -5731, -243, -30, 0, -26, 0, 0x00000000, bhvHiddenObject),
+		OBJECT(0, -6074, -243, -195, 0, -26, 0, 0x00000000, bhvHiddenObject),
+		OBJECT(MODEL_STAR, -7200, 352, -698, 0, 0, 0, (1 << 24), bhvStar),
 		OBJECT(MODEL_CRYSTAR, 1503, 13, 2816, 0, 0, 0, 0x00000000, bhvCrystalStar),
 		TERRAIN(bob_area_1_collision),
 		MACRO_OBJECTS(bob_area_1_macro_objs),
-		SET_BACKGROUND_MUSIC(0x00, SEQ_LEVEL_UNDERGROUND),
+		SET_BACKGROUND_MUSIC(0x00, SEQ_CLOUDY_CLIMB),
 		TERRAIN_TYPE(TERRAIN_GRASS),
 		/* Fast64 begin persistent block [area commands] */
 		/* Fast64 end persistent block [area commands] */

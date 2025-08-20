@@ -6079,6 +6079,7 @@ const BehaviorScript bhvCrystalStar[] = {
     BEGIN(OBJ_LIST_SURFACE),
     OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
     LOAD_COLLISION_DATA(crystar_collision),
+    SET_FLOAT(oDrawingDistance, 20000),
     BEGIN_LOOP(),
         CALL_NATIVE(star_crystal),
         CALL_NATIVE(load_object_collision_model),

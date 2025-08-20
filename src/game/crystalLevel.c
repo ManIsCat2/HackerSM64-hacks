@@ -51,5 +51,5 @@ void star_crystal(void) {
         obj_mark_for_deletion(o);
         spawn_default_star(o->oPosX, o->oPosY, o->oPosZ);
     }
-    print_text_fmt_int(20, 20, "P %d", o->oHealth);
+   // print_text_fmt_int(20, 20, "P %d", o->oHealth);
 }
