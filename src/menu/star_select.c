@@ -99,7 +99,7 @@ void render_100_coin_star(u8 stars) {
                                                             bhvActSelectorStarType, (370 * 4.0f) / 3, 24, -300, 0, 0, 0);
         } else {
             sStarSelectorModels[6] = spawn_object_abs_with_rot(o, 0, MODEL_STAR,
-                                                            bhvActSelectorStarType, 370, 24, -300, 0, 0, 0);
+                                                            bhvActSelectorStarType, 487, 24, -300, 0, 0, 0);
         }
     #else
         sStarSelectorModels[6] = spawn_object_abs_with_rot(o, 0, MODEL_STAR,
@@ -335,7 +335,8 @@ void print_act_selector_strings(void) {
     gSPDisplayList(gDisplayListHead++, dl_rgba16_text_begin);
     gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, 255);
     s32 get_string_width(u8 *str);
-    print_hud_my_score_coins(1, gCurrSaveFileNum - 1, COURSE_NUM_TO_INDEX(gCurrCourseNum), 155, 106);
+    //print_hud_lut_string(HUD_LUT_GLOBAL, 260, 20, (u8*)"MY SCORE");
+    print_hud_my_score_coins(1, gCurrSaveFileNum - 1, COURSE_NUM_TO_INDEX(gCurrCourseNum), 260, 80);
     print_hud_lut_string(HUD_LUT_GLOBAL, SCREEN_CENTER_X-get_string_width(currLevelName), 45, currLevelName);
     gSPDisplayList(gDisplayListHead++, dl_rgba16_text_end);
 
@@ -346,7 +347,7 @@ void print_act_selector_strings(void) {
 #if MULTILANG
         print_generic_string(95, 118, myScore[language]);
 #else
-        print_generic_string(102, 118, myScore);
+        //print_generic_string(102, 118, myScore);
 #endif
     }
 

@@ -655,9 +655,8 @@ void print_hud_my_score_coins(s32 useCourseCoinScore, s8 fileIndex, s8 courseInd
 
     if (numCoins != 0) {
         print_hud_lut_string(HUD_LUT_GLOBAL, x +  0, y, gHudSymCoin);
-        print_hud_lut_string(HUD_LUT_GLOBAL, x + 16, y, gHudSymX);
         int_to_str(numCoins, strNumCoins);
-        print_hud_lut_string(HUD_LUT_GLOBAL, x + 32, y, strNumCoins);
+        print_hud_lut_string(HUD_LUT_GLOBAL, x + 16, y, strNumCoins);
     }
 }
 
