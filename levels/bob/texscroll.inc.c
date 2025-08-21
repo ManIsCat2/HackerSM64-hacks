@@ -63,7 +63,7 @@ void scroll_bob_dl_Purple_Juice_Box_Mesh_mesh_layer_1_vtx_0() {
 
 void scroll_bob_dl_Water_Box_Mesh_mesh_layer_5_vtx_0() {
 	int i = 0;
-	int count = 159;
+	int count = 156;
 	int width = 32 * 0x20;
 	int height = 32 * 0x20;
 

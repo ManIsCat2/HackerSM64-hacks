@@ -426,21 +426,18 @@ void render_debug_mode(void) {
  */
 void render_hud_coins(void) {
     print_text(HUD_COINS_X, HUD_TOP_Y, "$"); // 'Coin' glyph
-    print_text((HUD_COINS_X + 16), HUD_TOP_Y, "*"); // 'X' glyph
-    print_text_fmt_int((HUD_COINS_X + 30), HUD_TOP_Y, "%d", gHudDisplay.coins);
+    print_text_fmt_int((HUD_COINS_X + 16), HUD_TOP_Y, "%d", gHudDisplay.coins);
 }
 
 /**
  * Renders the amount of stars collected.
  * Disables "X" glyph when Mario has 100 stars or more.
  */
+#define STAR_YPOS HUD_TOP_Y+20
 void render_hud_stars(void) {
     if (gHudFlash == HUD_FLASH_STARS && gGlobalTimer & 0x8) return;
-    s8 showX = (gHudDisplay.stars < 100);
-    print_text(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(HUD_STARS_X), HUD_TOP_Y, "^"); // 'Star' glyph
-    if (showX) print_text((GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(HUD_STARS_X) + 16), HUD_TOP_Y, "*"); // 'X' glyph
-    print_text_fmt_int((showX * 14) + GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(HUD_STARS_X - 16),
-                       HUD_TOP_Y, "%d", gHudDisplay.stars);
+    print_text(HUD_COINS_X, STAR_YPOS, "^"); // 'star' glyph
+    print_text_fmt_int((HUD_COINS_X + 16), STAR_YPOS, "%d", gHudDisplay.stars);
 }
 
 /**

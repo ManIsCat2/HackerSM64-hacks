@@ -542,5 +542,6 @@ extern const BehaviorScript bhvIntroScene[];
 extern const BehaviorScript bhvUnusedFakeStar[];
 //level crystal
 extern const BehaviorScript bhvCrystalStar[];
+extern const BehaviorScript bhvGoombaCNPC[];
 
 #endif // BEHAVIOR_DATA_H

@@ -34,10 +34,19 @@
 
 #define m gMarioState
 
+u8 starCollected(u8 id) {
+    u32 starflags = save_file_get_star_flags(gCurrSaveFileNum - 1, gCurrCourseNum - 1);
+
+    if (starflags & (1 << id)) {
+        return TRUE;
+    }
+    return FALSE;
+}
+
 void star_crystal(void) {
     if (!o->oHiddenBlueCoinSwitch) {
         o->oHealth = 0;
-        o->oHiddenBlueCoinSwitch = spawn_object_relative(0, 0, 60, 0, o, MODEL_STAR, bhvStaticObject);
+        o->oHiddenBlueCoinSwitch = spawn_object_relative(0, 0, 60, 0, o, starCollected(0) ? MODEL_TRANSPARENT_STAR : MODEL_STAR, bhvStaticObject);
         o->oHiddenBlueCoinSwitch->oFaceAngleYaw -= 16384;
     }
 
@@ -52,4 +61,24 @@ void star_crystal(void) {
         spawn_default_star(o->oPosX, o->oPosY, o->oPosZ);
     }
    // print_text_fmt_int(20, 20, "P %d", o->oHealth);
+}
+
+void goombacrystal_npc(void) {
+    cur_obj_scale(2.5f);
+    o->oInteractionSubtype = INT_SUBTYPE_NPC;
+    o->hitboxHeight = 80;
+    o->hitboxRadius = 90;
+    o->oIntangibleTimer = 0;
+
+    o->oInteractType = INTERACT_TEXT;
+
+    struct Object*crystalobj = cur_obj_nearest_object_with_behavior(bhvCrystalStar);
+
+    u8 dialog = crystalobj ? 0 : 1;
+
+    if (o->oInteractStatus & INT_STATUS_INTERACTED) {
+        if (cur_obj_update_dialog_with_cutscene(MARIO_DIALOG_LOOK_FRONT, DIALOG_FLAG_TURN_TO_MARIO, CUTSCENE_DIALOG, dialog)) {
+            o->oInteractStatus = 0;
+        }
+    }
 }

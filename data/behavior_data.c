@@ -956,6 +956,7 @@ const BehaviorScript bhvCoinFormationSpawnedCoin[] = {
     BEGIN(OBJ_LIST_LEVEL),
     OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
     BILLBOARD(),
+    SET_FLOAT(oDrawingDistance, 20000),
     CALL_NATIVE(bhv_init_room),
     BEGIN_LOOP(),
         CALL_NATIVE(bhv_coin_formation_spawned_coin_loop),
@@ -6086,3 +6087,14 @@ const BehaviorScript bhvCrystalStar[] = {
     END_LOOP(),
 };
 
+extern void goombacrystal_npc(void);
+const BehaviorScript bhvGoombaCNPC[] = {
+    BEGIN(OBJ_LIST_GENACTOR),
+    OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
+    LOAD_ANIMATIONS(oAnimations, goomba_seg8_anims_0801DA4C),
+    ANIMATE(0),
+    SET_FLOAT(oDrawingDistance, 20000),
+    BEGIN_LOOP(),
+        CALL_NATIVE(goombacrystal_npc),
+    END_LOOP(),
+};
