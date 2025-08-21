@@ -1849,3 +1849,5 @@ const Collision main_menu_seg7_collision[] = {
 #undef COURSE_TABLE
 
 #endif
+
+#include "levels/menu/starselect_dl/model.inc.c"

@@ -17,7 +17,7 @@ extern Gfx bob_dl_JuiceFall2_mesh_layer_1_tri_0[];
 extern Vtx bob_dl_MainGeometry_mesh_layer_1_vtx_cull[8];
 extern Vtx bob_dl_MainGeometry_mesh_layer_1_vtx_0[73];
 extern Gfx bob_dl_MainGeometry_mesh_layer_1_tri_0[];
-extern Vtx bob_dl_MainGeometry_mesh_layer_1_vtx_1[975];
+extern Vtx bob_dl_MainGeometry_mesh_layer_1_vtx_1[991];
 extern Gfx bob_dl_MainGeometry_mesh_layer_1_tri_1[];
 extern Vtx bob_dl_MainGeometry_mesh_layer_1_vtx_2[30];
 extern Gfx bob_dl_MainGeometry_mesh_layer_1_tri_2[];

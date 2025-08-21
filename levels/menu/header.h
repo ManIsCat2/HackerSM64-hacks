@@ -49,4 +49,5 @@ extern const u8 eu_course_strings_de_table[];
 extern const LevelScript level_main_menu_entry_file_select[];
 extern const LevelScript level_main_menu_entry_act_select[];
 
+#include "levels/menu/starselect_dl/header.h"
 #endif

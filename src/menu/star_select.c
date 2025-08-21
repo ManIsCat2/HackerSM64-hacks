@@ -171,7 +171,7 @@ void bhv_act_selector_init(void) {
         for (i = 0; i < sVisibleStars; i++) {
             sStarSelectorModels[i] =
                 spawn_object_abs_with_rot(o, 0, selectorModelIDs[i], bhvActSelectorStarType,
-                                        (75 + (sVisibleStars * -75) + (i * 152)), 248, -300, 0, 0, 0);
+                                        (75 + (sVisibleStars * -75) + (i * 152)), 90, -300, 0, 0, 0);
             sStarSelectorModels[i]->oStarSelectorSize = 1.0f;
         }
     }
@@ -334,7 +334,9 @@ void print_act_selector_strings(void) {
     // Print the coin highscore.
     gSPDisplayList(gDisplayListHead++, dl_rgba16_text_begin);
     gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, 255);
+    s32 get_string_width(u8 *str);
     print_hud_my_score_coins(1, gCurrSaveFileNum - 1, COURSE_NUM_TO_INDEX(gCurrCourseNum), 155, 106);
+    print_hud_lut_string(HUD_LUT_GLOBAL, SCREEN_CENTER_X-get_string_width(currLevelName), 45, currLevelName);
     gSPDisplayList(gDisplayListHead++, dl_rgba16_text_end);
 
     gSPDisplayList(gDisplayListHead++, dl_ia_text_begin);
@@ -351,8 +353,8 @@ void print_act_selector_strings(void) {
 #if MULTILANG
     print_generic_string(get_str_x_pos_from_center(160, (currLevelName + 3), 10.0f), 33, currLevelName + 3);
 #else
-    lvlNameX = get_str_x_pos_from_center(160, currLevelName + 3, 10.0f);
-    print_generic_string(lvlNameX, 33, currLevelName + 3);
+   // lvlNameX = get_str_x_pos_from_center(160, currLevelName + 3, 10.0f);
+   // print_generic_string(lvlNameX, 33, currLevelName + 3);
 #endif
 
     gSPDisplayList(gDisplayListHead++, dl_ia_text_end);
@@ -360,7 +362,7 @@ void print_act_selector_strings(void) {
 #if MULTILANG
     print_course_number(language);
 #else
-    print_course_number();
+    //print_course_number();
 #endif
 
     gSPDisplayList(gDisplayListHead++, dl_menu_ia8_text_begin);
@@ -373,7 +375,8 @@ void print_act_selector_strings(void) {
         print_menu_generic_string(get_str_x_pos_from_center(ACT_NAME_X, selectedActName, 8.0f), 81, selectedActName);
 #else
         actNameX = get_str_x_pos_from_center(ACT_NAME_X, selectedActName, 8.0f);
-        print_menu_generic_string(actNameX, 81, selectedActName);
+        gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, 255);
+        print_menu_generic_string(actNameX, 130, selectedActName);
 #endif
     }
 
@@ -383,7 +386,7 @@ void print_act_selector_strings(void) {
 #if MULTILANG
         print_menu_generic_string(143 - sVisibleStars * 15 + i * 30, 38, starNumbers);
 #else
-        print_menu_generic_string(139 - sVisibleStars * 17 + i * 34, 38, starNumbers);
+        //print_menu_generic_string(139 - sVisibleStars * 17 + i * 34, 38, starNumbers);
 #endif
     }
 
